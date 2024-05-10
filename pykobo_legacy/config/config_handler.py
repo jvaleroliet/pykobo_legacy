@@ -56,3 +56,19 @@ def set_server_url(server_url):
     config = load_config()
     config['server_url'] = server_url
     save_config(config)
+
+def get_user():
+    """
+    Get the user from the configuration.
+    """
+    config = load_config()
+    return config['user']
+
+def set_user(user):
+    """
+    Set the user in the configuration.
+    """
+    config = load_config()
+    config['user'] = user
+    save_config(config)
+    

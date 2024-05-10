@@ -1,19 +1,22 @@
-'''
-@File    :   media.py
-@Time    :   2023/01/17 12:32:19
-@Author  :   Juan Valero Oliet 
-@Email   :   jvalero@accioncontraelhambre.org
-@Desc    :   Este módulo permite subir, actualizar, y borrar media a través de la api.
-'''
-
 import json
 import requests 
 import pandas as pd
 from copy import copy
-from kobo.settings import TOKEN, SERVER_URL, USER
 import os
 import time
-import kobo.api as api
+from . import api
+from .config import config_handler as config
+
+
+# Get the current token
+token = config.get_token()
+
+# Get the current server URL
+server_url = config.get_server_url()
+# Get the current token
+token = config.get_token()
+# Get the current user
+user = config.get_user()
 
 
 
@@ -32,8 +35,8 @@ def upload_media(
     folder_path : str,
     file_name : str,
     rewrite : bool = False,
-    token : str = TOKEN, 
-    kc_server_url : str = SERVER_URL):
+    token : str = token, 
+    kc_server_url : str = server_url):
     '''
     This provides method to upload media via api. 
     Only csv or images are allowed.
@@ -108,8 +111,8 @@ def upload_media_direct(
     file_name : str,
     file_name_new : str,
     rewrite : bool = False,
-    token : str = TOKEN, 
-    kc_server_url : str = SERVER_URL):
+    token : str = token, 
+    kc_server_url : str = server_url):
     '''
     This provides method to upload media via api, but media downloaded in situ. 
     Only csv or images are allowed.
@@ -208,8 +211,8 @@ def acchatments_to_column(
 def df_with_ttachments_column(
     idform : str,
     media_columns : list,
-    token : str = TOKEN, 
-    kc_server_url : str = SERVER_URL):
+    token : str = token, 
+    kc_server_url : str = server_url):
     '''
     This function returns attached media in new columns, 
     one for each question with media, given id form.
@@ -232,7 +235,7 @@ def df_with_ttachments_column(
     return data
     
 
-def get_media_form(form_id, token=TOKEN, kc_server_url=SERVER_URL):
+def get_media_form(form_id, token : str = token, kc_server_url : str = server_url):
     '''
     This function gets all media from a form.
 
@@ -253,9 +256,9 @@ def get_media_form(form_id, token=TOKEN, kc_server_url=SERVER_URL):
 def download_media(
     idform : str,
     id_media : str,
-    token : str = TOKEN, 
-    kc_server_url : str = SERVER_URL,
-    user : str = USER):
+    token : str = token, 
+    kc_server_url : str = server_url,
+    user : str = user):
     '''
     This function downloads data (image or csv) from a form media.
     

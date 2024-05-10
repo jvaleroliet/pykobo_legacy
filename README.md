@@ -28,6 +28,9 @@ config.set_token("new_token")
 
 # Set a new server URL
 config.set_server_url("https://example.com")
+
+# Set a new user
+config.set_user("new_user")
 ```
 
 ### Get configuration settings
@@ -41,4 +44,7 @@ token = config.get_token()
 
 # Get the current server URL
 server_url = config.get_server_url()
+
+# Get the current user
+server_url = config.get_user()
 
