@@ -59,7 +59,7 @@ def upload_media(
         folder_path+="/"
 
     if file_extension not in valid_media:
-        raise ValueError("upload_media: semestre must be one of %r." % valid_media)
+        raise ValueError("upload_media: media file must be one of %r." % valid_media)
 
     if file_extension in img_extension:
         mime = "image/{}".format(file_extension[1:])
