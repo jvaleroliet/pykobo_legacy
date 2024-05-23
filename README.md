@@ -9,7 +9,7 @@ This was one of my first projects in Python, so please don't expect it to be per
 ## 1. Installation
 To install, run the following command in your terminal:
 
-`pip install git+https://github.com/jvalero/pykobo_legacy.git@main`
+`pip install git+https://github.com/jvaleroliet/pykobo_legacy.git@main`
 
 
 ## 2. Configuration File
