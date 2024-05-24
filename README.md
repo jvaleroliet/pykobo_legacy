@@ -1,4 +1,9 @@
-# pykobo_legacy
+<p align="center">
+  <picture>
+    <img alt="pykobo" src="https://jvaleroliet.github.io/images/pykobo.png" style="max-width: 100%;">
+  </picture>
+</p>
+
 ## Introduction
 This is an old repository to fetch data from KoboToolBox that uses the api v1. Is shared for reference and to use by entities that have an old KoboToolBox version installed on their systems.
 
