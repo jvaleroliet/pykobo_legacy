@@ -30,7 +30,7 @@ You can access and modify the configuration settings using the provided function
 You must do this at least once before using the package.
 
 ```python
-import pykobo_legacy.config as config
+import pykobo_legacy.config.config_handler as config
 
 # Set a new token
 config.set_token("new_token")
