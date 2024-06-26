@@ -8,7 +8,8 @@ import uuid
 from itertools import combinations
 from . import media
 from .config import config_handler as config
-
+from datetime import datetime
+import os
 
 # Get the current token
 token = config.get_token()
@@ -226,6 +227,21 @@ def process_choices(sample_list, choices=False):
     '''
     return list_comb_str(list_combinations(sample_list), choices)
 
+def backup(folder_path):
+    folder = os.path.join(folder_path, datetime.today().strftime("%Y%m%d"))
+    if not os.path.exists(folder):
+        os.mkdir(folder)
+    forms = forms_info()
+    forms.to_csv(os.path.join(folder, "forms_info.csv"))
+    
+    for form in forms.iterrows():
+        id = str(form[1]["id"])
+        form_folder = os.path.join(folder, f"{id}")
+        if not os.path.exists(form_folder):
+            os.mkdir(form_folder)
+        data = json_to_df(id)
+        data.to_csv(os.path.join(form_folder, "data.csv"))
+        download_xls(id, f"{form_folder}/form.xls")
 
 
 

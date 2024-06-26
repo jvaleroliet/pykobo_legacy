@@ -137,5 +137,17 @@ media_id = "media_id"
 kb.media.download_media(form_id, media_id)
 ```
 
+#### Backup
+The package offers a function to backup all the projects from the user account. It will save the data and the xls in two separate files, in one folder for each form, as well as the form info in a file called form_info.
+
+```python
+import pykobo_legacy as kb
+
+# Backup all the projects from the user account
+kb.api.backup("output/folder/path/for/backup")
+
+```
+
+
 
 
