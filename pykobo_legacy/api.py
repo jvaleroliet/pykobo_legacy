@@ -232,7 +232,7 @@ def backup(folder_path):
     if not os.path.exists(folder):
         os.mkdir(folder)
     forms = forms_info()
-    forms.to_csv(os.path.join(folder, "forms_info.csv"))
+    forms.to_csv(os.path.join(folder, "forms_info.csv"), index=False)
     
     for form in forms.iterrows():
         id = str(form[1]["id"])
@@ -240,7 +240,7 @@ def backup(folder_path):
         if not os.path.exists(form_folder):
             os.mkdir(form_folder)
         data = json_to_df(id)
-        data.to_csv(os.path.join(form_folder, "data.csv"))
+        data.to_csv(os.path.join(form_folder, "data.csv"), index=False)
         download_xls(id, f"{form_folder}/form.xls")
 
 
