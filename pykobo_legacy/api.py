@@ -67,6 +67,15 @@ def get_xls(form_id, token=token, kc_server_url=server_url, sheet=1):
     return df
 
 
+def download_xls(form_id, download_path, token=token, kc_server_url=server_url ):
+    token_hd="Token "+token
+    x=kc_server_url+"api/v1/forms/"+form_id+"/form.xls"
+    url=requests.get(x, headers={"Authorization" : token_hd})
+    with open(download_path, 'wb') as f:
+        f.write(url.content)
+        f.close()
+
+    
 
 def change_validation_status( id, idform, new_validation, token=token, kc_server_url=server_url):
     token_hd="Token "+token

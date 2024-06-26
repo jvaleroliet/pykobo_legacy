@@ -12,7 +12,8 @@ setup(
         "pandas==1.5.3",
         "Pillow==9.4.0",
        " Requests==2.28.2",
-        "utils==1.0.1"
+        "utils==1.0.1",
+        "xlrd>=2.0.1 "
         ],
     include_package_data=True,
 )
