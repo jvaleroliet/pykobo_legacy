@@ -6,6 +6,8 @@
 
 ## Introduction
 This is an old repository to fetch data from KoboToolBox that uses the api v1. Is shared for reference and to use by entities that have an old KoboToolBox version installed on their systems.
+It offers the possibility to make a backup of the data stored in the KoBoToolBox server (see [Backup](#backup) section).
+
 
 ### Note
 This repository is not maintained anymore. Please use the new version of pykobo [https://github.com/pvernier/pykobo](https://github.com/pvernier/pykobo) or my fork with new features [https://github.com/jvalero/pykobo](https://github.com/jvalero/pykobo).
@@ -137,7 +139,7 @@ media_id = "media_id"
 kb.media.download_media(form_id, media_id)
 ```
 
-#### Backup
+### Backup
 The package offers a function to backup all the projects from the user account. It will save the data and the xls in two separate files, in one folder for each form, as well as the form info in a file called form_info.
 
 ```python
