@@ -32,7 +32,8 @@ You can access and modify the configuration settings using the provided function
 You must do this at least once before using the package.
 
 ```python
-import pykobo_legacy.config.config_handler as config
+from pykobo_legacy.config import  config_handler as config
+
 
 # Set a new token
 config.set_token("new_token")
@@ -48,7 +49,7 @@ config.set_user("new_user")
 The package access the configuration settings using the following functions, that you can use to get the current values of the settings:
 
 ```python
-import pykobo_legacy.config as config
+from pykobo_legacy.config import  config_handler as config
 
 # Get the current token
 token = config.get_token()
